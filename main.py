@@ -26,5 +26,4 @@ if __name__ == "__main__":
 
     with open('output.txt', 'a') as f:
         for (bbox, text, prob) in result:
-            # Write text to the file
             f.write(text + '\n')
