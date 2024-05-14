@@ -24,5 +24,7 @@ if __name__ == "__main__":
     reader = easyocr.Reader(["en"])
     result = reader.readtext("/home/alifoo/Workspace/py-ocr/example.jpg")
 
-    for (bbox, text, prob) in result:
-        print(text)
+    with open('output.txt', 'a') as f:
+        for (bbox, text, prob) in result:
+            # Write text to the file
+            f.write(text + '\n')
