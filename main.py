@@ -22,7 +22,7 @@ def create_pdf(pdf_directory):
 
 if __name__ == "__main__":
     reader = easyocr.Reader(["en"])
-    result = reader.readtext("/home/alifoo/Workspace/py-ocr/mext/College of Technology/2008/English 2008 - College of Technology/page_1.jpg")
+    result = reader.readtext("/home/alifoo/Workspace/py-ocr/main.py")
 
     for (bbox, text, prob) in result:
         print(text)
