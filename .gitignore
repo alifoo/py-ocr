@@ -2,3 +2,4 @@
 venv/
 post.txt
 mext/
+__pycache__/
