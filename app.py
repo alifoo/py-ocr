@@ -1,9 +1,10 @@
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
 tests = [
     {
+        "test_id": 1,
         "name": "2019_ga_en",
         "year": 2019,
         "subject": "English",
@@ -35,3 +36,13 @@ tests = [
 @app.get("/tests")
 def get_tests():
     return {"tests": tests}
+
+@app.post("/tests")
+def create_store():
+    request_data = request.get_json()
+    new_test = {
+        "test_id": request_data["test_id"],
+        "name": request_data["name"],
+        "year": request_data["year"]}
+    tests.append(new_test)
+    return new_test, 201
